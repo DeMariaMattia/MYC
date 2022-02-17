@@ -1,0 +1,42 @@
+Divisione Lavori in settimane:
+
+Prima settimana:
+
+	Ananalisi e layout delle pagine
+
+Seconda settimana:
+	
+	divisione e inizio creazione pagine
+
+Terza settimana:
+
+	Sviluppo pagine e test
+	
+Quarta settimana:
+
+	Sviluppo pagine e test
+
+Quinta settimana:
+
+	Sviluppo pagine e test
+
+Sesta settimana:
+
+	Sviluppo pagine e test
+
+Settima settimana:
+
+	Sviluppo pagine e test
+
+Ottava settimana:
+
+	Revisioni finali
+
+Nona settimana:
+
+	Documentazione
+
+Decima settimana:
+
+	Test finali e conclusione app.
+	
