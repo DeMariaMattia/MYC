@@ -1,7 +1,8 @@
 <html>
   <head>
     <link rel="stylesheet" href="Stile.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <script src="Operazioni.js"></script>
   </head>
         <hr class="SpostaBar" size="80" width="100%" color="red" noshade>
         <div class="container">
@@ -16,16 +17,13 @@
         </div>
       </header>
       <body>
-        <i class="fas fa-search"></i>
           <h2 class="text">Inserire codice prodotto</h2>
           <div class="search_wrap search_wrap_3">
 			<div class="search_box">
-				<input type="text" class="input" placeholder="Codice prodotto...">
-				<div class="btn btn_common">
-					<i class="fas fa-search"></i>
-				</div>
-			</div>
-		</div>
-      </body>
+				<input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
+        <input type="button" class="ButtonCerca"onclick="TrovaStringa()">
+        <p class="test"><i class="gg-search"></i></p>
+		  </div>
+    </body>
 </html>
 
