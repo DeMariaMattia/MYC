@@ -123,13 +123,11 @@ nav a:hover::before {
 
 }
 
-<<<<<<< Updated upstream
 .search_wrap .search_box .btn:hover{
 	background:grey;	
-=======
+}
 .search_wrap .search_box .rosso:hover{
 	filter: brightness(.8);	
->>>>>>> Stashed changes
 }
 
 .search_wrap .search_box .btn.btn_common .fas{
@@ -157,7 +155,7 @@ nav a:hover::before {
 }
 
 .Sposta{
-	margin-top: -75px;
+	margin-top:-10px;
 }
 .SpostaBar{
 	margin-top: 0%;
@@ -176,7 +174,6 @@ nav a:hover::before {
 .gg-search{
 position: absolute;
 }
-<<<<<<< Updated upstream
 
 .centerForm{
 	position: absolute;
@@ -187,5 +184,3 @@ position: absolute;
 	width: 100px;
 	height: 100px;
 }
-=======
->>>>>>> Stashed changes

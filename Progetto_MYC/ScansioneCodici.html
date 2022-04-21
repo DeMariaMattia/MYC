@@ -1,7 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="Stile.css">
-    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://css.gg/search.css'>
     <script src="Operazioni.js"></script>
   </head>
         <hr class="SpostaBar" size="80" width="100%" color="red" noshade>
@@ -17,17 +17,15 @@
         </div>
       </header>
       <body>
+        <form action="ScansioneCodice.php" method="post">
           <h2 class="text">Inserire codice prodotto</h2>
           <div class="search_wrap search_wrap_3">
-			<div class="search_box">
+			  <div class="search_box">
 				<input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
-<<<<<<< Updated upstream
-        <input type="button" class="ButtonCerca"onclick="TrovaStringa()">
-        <p class="test"><i class="gg-search"></i></p>
-=======
-        <div class="rosso" onclick="TrovaStringa()"><i class="gg-search"></i></div>
->>>>>>> Stashed changes
+        <!--<div class="rosso" onclick="TrovaStringa()"><i class="gg-search"></i></div>-->
+        <input type="submit" id="BtnStringa" name="BtnStringa" class="rosso">
 		  </div>
+    </form>
     </body>
 </html>
 

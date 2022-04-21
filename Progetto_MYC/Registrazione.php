@@ -11,7 +11,7 @@ if (isset($_POST['btn_registrazione'])) {
     $password_conferma = mysqli_real_escape_string($link, $_POST["password_conferma"]);
 
     if ($password == $password_conferma) {
-        $sql_query = "INSERT INTO utenti (email, nome, cognome, username, password) VALUES (?, ?, ?, ?, ?)";
+        $sql_query = "INSERT INTO utenti (Email,Nome,Cognome,Username,Password) VALUES (?, ?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($link, $sql_query)) {
             mysqli_stmt_bind_param($stmt, "sssss", $param_email, $param_nome, $param_cognome, $param_username, $param_password);
@@ -22,7 +22,7 @@ if (isset($_POST['btn_registrazione'])) {
             $param_password = $password;
 
             if (mysqli_stmt_execute($stmt)) {
-                header("Location:Carrello.html");
+                header("Location:Login.html");
                 exit();
             } else {
                 $err = mysqli_stmt_error($stmt);
