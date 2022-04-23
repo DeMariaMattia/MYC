@@ -28,7 +28,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                         $Reparto=$row["Reparto"];
                         $PrezzoUnitario=$row["PrezzoUnitario"];
                         $ID_Cliente=$_SESSION['ID_Cliente'];
-                        echo($ID_Cliente);
                         //Aggiunta al carello
                         //header("location:Visualizzadati.php?&Matricola=".$Matricola);
                     }else{

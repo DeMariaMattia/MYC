@@ -22,8 +22,16 @@ if (isset($_POST['btn_registrazione'])) {
             $param_password = $password;
 
             if (mysqli_stmt_execute($stmt)) {
-                header("Location:Login.html");
-                exit();
+                //Prendo Id utente
+                $sql_ID = "SELECT ID_Utente FROM utenti WHERE Username = '" . $username . "' AND Password = '" . $password . "' ";
+                $resultID = mysqli_query($link, $sql_ID);
+                $row = mysqli_fetch_array($resultID);
+                $ID_Cliente=$row['ID_Utente'];
+                //Creazione tessera
+                $sql_Tessera = "INSERT INTO tessera (ID_Utente,Punti) VALUES ($ID_Cliente, '0')";
+                $result = mysqli_query($link, $sql_Tessera);
+                //header("Location:Login.php");
+                //exit();
             } else {
                 $err = mysqli_stmt_error($stmt);
                 echo "<script>alert('$err')</script>";
