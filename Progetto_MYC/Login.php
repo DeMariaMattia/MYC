@@ -26,30 +26,25 @@ if (isset($_POST['btn_login'])) {
 
 <html>
 <link rel="stylesheet" href="Stile.css">
-<hr class="SpostaBar" size="80" width="100%" color="red" noshade>
-<div class="container">
-    <nav class="Sposta">
-        <ul>
-            <li><a href="Catalogo.html">Catalogo</a></li>
-            <li><a href="Cerca.html">Cerca</a></li>
-            <li><a href="ScansioneCodici.html">Scansione Codici</a></li>
-            <li><a href="Carrello.html">Carrello</a></li>
-        </ul>
-    </nav>
-</div>
-</header>
-
+<nav class="header">
+            <ul>
+              <li><a href="Catalogo.html">Catalogo</a></li>
+              <li><a href="Cerca.html">Cerca</a></li>
+              <li><a href="Tessera.html">Tessera</a></li>
+              <li><a href="Carrello.html">Carrello</a></li>
+              <li><a href="Logout.php">Logout</a></li>
+            </ul>
+          </nav>
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="centerForm">
-            <label for="username"><b>Username</b></label>
+        <div class="centerForm search_box">
+            <label class="label" for="username">Username</label>
             <input type="text" placeholder="Inserire Username" name="username" required><br>
 
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Inserire Password" name="password" required><br>
+            <label class="text" for="password">Password</label>
+            <input class="input" type="password" placeholder="Inserire Password" name="password" required><br>
 
             <button type="submit" name="btn_login">Login</button>
-            <a href="Registrazione.php">Registrazione</a><br>
         </div>
     </form>
 </body>

@@ -6,7 +6,8 @@ header("location:Login.php");
 <?php
 require_once 'Config.php';
 $CodiceProdotto="";
-$CodiceProdotto_err="";
+$Quantita=0;
+$CodiceProdotto_err=$Quantita_err="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $input_Codice=trim($_POST["TxtStringa"]);
@@ -16,21 +17,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $CodiceProdotto=$input_Codice;
     }
 }
-    if((empty($CodiceProdotto_err))){
-        $sql="SELECT * FROM prodotto WHERE (CodiceProdotto='$CodiceProdotto')";
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+
+    $input_Qta=trim($_POST["TxtQuantita"]);
+    if(empty($input_Qta)){
+        $Quantita_err="Inserisci una quantità valida.";
+    }else{
+        $Quantita=$input_Qta;
+    }
+}
+    if((empty($CodiceProdotto_err))&&(empty($Quantita_err))){
+        $sql="INSERT INTO carrello FROM prodotto WHERE (CodiceProdotto='$CodiceProdotto')";
             if($stmt= mysqli_prepare($link,$sql)){
                 if(mysqli_stmt_execute($stmt)){
-                    $result = mysqli_stmt_get_result($stmt);
-                    if(mysqli_num_rows($result)==1){
-                        $row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-                        $NomeProdotto=$row["NomeProdotto"];
-                        $Categoria=$row["Categoria"];
-                        $Reparto=$row["Reparto"];
-                        $PrezzoUnitario=$row["PrezzoUnitario"];
                         $ID_Cliente=$_SESSION['ID_Cliente'];
-                        echo($ID_Cliente);
-                        //Aggiunta al carello
-                        //header("location:Visualizzadati.php?&Matricola=".$Matricola);
+                        $sql_query = "INSERT INTO carrello (ID_Utente,CodiceProdotto,Quantita) VALUES ($ID_Cliente, $CodiceProdotto, $Quantita)";
+                        if ($stmt = mysqli_prepare($link, $sql_query)) {
                     }else{
                         header("location:ScansioneCodice.html");
                         exit();

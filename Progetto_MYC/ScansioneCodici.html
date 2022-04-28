@@ -1,33 +1,32 @@
 <html>
-
-<head>
+  <head>
     <link rel="stylesheet" href="Stile.css">
-    <link rel='stylesheet' href='https://css.gg/search.css'>
-    <script src="Operazioni.js"></script>
-</head>
-<hr class="SpostaBar" size="80" width="100%" color="red" noshade>
-<div class="container">
-    <nav class="Sposta">
-        <ul>
-            <li><a href="Catalogo.html">Catalogo</a></li>
-            <li><a href="Cerca.html">Cerca</a></li>
-            <li><a href="Tessera.php">Tessera</a></li>
-            <li><a href="Carrello.html">Carrello</a></li>
-        </ul>
-    </nav>
-</div>
-</header>
-
-<body>
-    <form action="ScansioneCodice.php" method="post">
-        <h2 class="text">Inserire codice prodotto</h2>
-        <div class="search_wrap search_wrap_3">
+  </head>
+          <nav class="header">
+            <ul>
+              <li><a href="Catalogo.html">Catalogo</a></li>
+              <li><a href="Cerca.html">Cerca</a></li>
+              <li><a href="Tessera.html">Tessera</a></li>
+              <li><a href="Carrello.html">Carrello</a></li>
+              <li><a href="Logout.php">Logout</a></li>
+            </ul>
+          </nav>
+      <body>
+        <form action="ScansioneCodice.php" method="post">
+          <div class="text">
+            <h2>Inserire codice prodotto</h2>    
+          <div class="search_wrap search_wrap_3">
+			    <div class="search_box">
+				    <input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
+              <h2>Inserire Quantita prodotto</h2>
+            </div>       
+            <div class="search_wrap search_wrap_3">
             <div class="search_box">
-                <input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
-                <!--<div class="rosso" onclick="TrovaStringa()"><i class="gg-search"></i></div>-->
-                <input type="submit" id="BtnStringa" name="BtnStringa" class="rosso">
-            </div>
-    </form>
-</body>
-
+              <input type="text" id="TxtQuantita" name="TxtQuantita" class="input" placeholder="Quantita prodotto...">
+            <input type="submit" id="BtnStringa" name="BtnStringa" class="rosso">
+		      </div>
+          </div>
+        </form>
+    </body>
 </html>
+

@@ -1,27 +1,22 @@
 <link rel="stylesheet" href="Stile.css">
-<hr class="SpostaBar" size="80" width="100%" color="red" noshade>
-<div class="container">
-    <nav class="Sposta">
-        <ul>
-            <li><a href="Catalogo.html">Catalogo</a></li>
-            <li><a href="ScansioneCodici.html">Scansione Codici</a></li>
-            <li><a href="Tessera.php">Tessera</a></li>
-            <li><a href="Carrello.html">Carrello</a></li>
-        </ul>
-    </nav>
-</div>
-</header>
-
-<body>
-    <<<<<<< Updated upstream <p>ciao scemo</p>
-        =======
+<nav class="header">
+  <ul>
+    <li><a href="Catalogo.html">Catalogo</a></li>
+    <li><a href="ScansioneCodici.html">Scansiona Codice</a></li>
+    <li><a href="Tessera.html">Tessera</a></li>
+    <li><a href="Carrello.html">Carrello</a></li>
+    <li><a href="Logout.php">Logout</a></li>
+  </ul>
+</nav>
+      <body>
         <h2 class="text">Inserire codice prodotto da cercare</h2>
         <div class="search_wrap search_wrap_3">
-            <div class="search_box">
-                <input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
-                <div class="rosso" onclick="CercaProdotto()"><i class="gg-search"></i></div>
-            </div>
-            >>>>>>> Stashed changes
-</body>
-
+			    <div class="search_box">
+            <form action="Cerca.php" method="post">
+				    <input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
+            <input type="submit" id="BtnStringa" name="BtnStringa" class="rosso">
+            </form>
+		      </div>
+          </div>
+      </body>
 </html>

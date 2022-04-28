@@ -8,7 +8,8 @@ body {
 
 .container {
 	width: 80%;
-	margin: 0 auto;
+	height: fit-content;
+	margin: 0;
 }
 
 header {
@@ -26,21 +27,15 @@ header::after {
   padding: 10px 0;
 }
 
-nav {
-  float: right;
-}
 
 nav ul {
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
 nav li {
   display: inline-block;
   margin-left: 70px;
-  padding-top: 23px;
-
+  padding: 10px;
   position: relative;
 }
 
@@ -54,7 +49,6 @@ nav a {
 nav a:hover {
   color: #000;
 }
-
 nav a::before {
   content: '';
   display: block;
@@ -72,6 +66,11 @@ nav a:hover::before {
   width: 100%;
 }
 
+.header{
+	background-color: red;
+	display: flex;
+	align-items:center;
+}
 .text{
     color:white;
     text-align: center;
@@ -154,15 +153,8 @@ nav a:hover::before {
 	border-radius: 50%;
 }
 
-.Sposta{
-	margin-top:-10px;
-}
 .SpostaBar{
 	margin-top: 0%;
-}
-.test{
-	margin-top: -130px;
-	margin-left: 455px;
 }
 .ButtonCerca{
 	background-color: red;
@@ -183,4 +175,11 @@ position: absolute;
 	margin-left: -50px;
 	width: 100px;
 	height: 100px;
+}
+.centerForm .label{
+	color:red;
+    text-align: center;
+    margin-top: 15%;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 30px;
 }
