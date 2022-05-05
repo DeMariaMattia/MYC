@@ -22,16 +22,12 @@ if (isset($_POST['btn_registrazione'])) {
             $param_password = $password;
 
             if (mysqli_stmt_execute($stmt)) {
-                //Prendo Id utente
                 $sql_ID = "SELECT ID_Utente FROM utenti WHERE Username = '" . $username . "' AND Password = '" . $password . "' ";
                 $resultID = mysqli_query($link, $sql_ID);
                 $row = mysqli_fetch_array($resultID);
-                $ID_Cliente=$row['ID_Utente'];
-                //Creazione tessera
+                $ID_Cliente = $row['ID_Utente'];
                 $sql_Tessera = "INSERT INTO tessera (ID_Utente,Punti) VALUES ($ID_Cliente, '0')";
                 $result = mysqli_query($link, $sql_Tessera);
-                //header("Location:Login.php");
-                //exit();
             } else {
                 $err = mysqli_stmt_error($stmt);
                 echo "<script>alert('$err')</script>";
@@ -47,10 +43,14 @@ if (isset($_POST['btn_registrazione'])) {
 <html>
 <link rel="stylesheet" href="Stile.css">
 <nav class="header">
-            <ul>
-              <li><a href="Login.html">Login</a></li>
-            </ul>
-          </nav>
+    <ul>
+        <li><a href="Catalogo.php">Catalogo</a></li>
+        <li><a href="Cerca.php">Cerca</a></li>
+        <li><a href="Tessera.php">Tessera</a></li>
+        <li><a href="ScansioneCodici.php">Scansiona codici</a></li>
+        <li><a href="Carrello.php">Carrello</a></li>
+    </ul>
+</nav>
 
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

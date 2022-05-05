@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "Config.php";
+
 if (isset($_POST['btn_login'])) {
     $username = mysqli_real_escape_string($link, $_POST["username"]);
     $password = mysqli_real_escape_string($link, $_POST['password']);
@@ -12,11 +13,10 @@ if (isset($_POST['btn_login'])) {
     $row = mysqli_fetch_array($result);
     $row2 = mysqli_fetch_array($resultID);
     $count = $row['cntUser'];
-    $ID_Cliente=$row2['ID_Utente'];
+    $ID_Cliente = $row2['ID_Utente'];
     if ($count > 0) {
         $_SESSION['ID_Cliente'] = $ID_Cliente;
-        header('Location: ScansioneCodici.html');
-
+        header('Location: ScansioneCodici.php');
     } else {
         $err = "Username e/o password non valido/i";
         echo "<script>alert('$err')</script>";
@@ -27,14 +27,15 @@ if (isset($_POST['btn_login'])) {
 <html>
 <link rel="stylesheet" href="Stile.css">
 <nav class="header">
-            <ul>
-              <li><a href="Catalogo.html">Catalogo</a></li>
-              <li><a href="Cerca.html">Cerca</a></li>
-              <li><a href="Tessera.html">Tessera</a></li>
-              <li><a href="Carrello.html">Carrello</a></li>
-              <li><a href="Logout.php">Logout</a></li>
-            </ul>
-          </nav>
+    <ul>
+        <li><a href="Catalogo.php">Catalogo</a></li>
+        <li><a href="Cerca.php">Cerca</a></li>
+        <li><a href="Tessera.php">Tessera</a></li>
+        <li><a href="ScansioneCodici.php">Scansiona codici</a></li>
+        <li><a href="Carrello.php">Carrello</a></li>
+    </ul>
+</nav>
+
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="centerForm search_box">

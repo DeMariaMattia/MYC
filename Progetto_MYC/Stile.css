@@ -183,3 +183,7 @@ position: absolute;
 	font-family: 'Work Sans', sans-serif;
 	font-size: 30px;
 }
+
+#selected{
+	color: black;
+}

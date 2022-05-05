@@ -1,7 +1,7 @@
 <?php
 require_once "Config.php";
 session_start();
-if ($_SESSION['ID_Cliente'] != "") {
+if (isset($_SESSION["ID_Cliente"])) {
 
   $nome = "";
   $cognome = "";
@@ -17,23 +17,20 @@ if ($_SESSION['ID_Cliente'] != "") {
   $punti = $row['Punti'];
   $codiceTessera = $row['CodiceTessera'];
 } else {
-  echo '<script>alert("Devi aver fatto il login per accedere a questa pagina!")</script>';
   header("Location:Login.php");
 }
 ?>
 
 <link rel="stylesheet" href="Stile.css">
-<hr class="SpostaBar" size="80" width="100%" color="red" noshade>
-<div class="container">
-  <nav class="Sposta">
-    <ul>
-      <li><a href="Catalogo.html">Catalogo</a></li>
-      <li><a href="Cerca.html">Cerca</a></li>
-      <li><a href="ScansioneCodici.html">Scansione Codici</a></li>
-      <li><a href="Carrello.html">Carrello</a></li>
-    </ul>
-  </nav>
-</div>
+<nav class="header">
+  <ul>
+    <li><a href="Catalogo.php">Catalogo</a></li>
+    <li><a href="Cerca.php">Cerca</a></li>
+    <li><a id="selected" href="Tessera.php">Tessera</a></li>
+    <li><a href="ScansioneCodici.php">Scansiona codici</a></li>
+    <li><a href="Carrello.php">Carrello</a></li>
+  </ul>
+</nav>
 </header>
 
 <body>
