@@ -43,6 +43,7 @@ if (isset($_POST['btn_registrazione'])) {
 <html>
 <link rel="stylesheet" href="Stile.css">
 <nav class="header">
+<<<<<<< Updated upstream
     <ul>
         <li><a href="Catalogo.php">Catalogo</a></li>
         <li><a href="Cerca.php">Cerca</a></li>
@@ -51,6 +52,12 @@ if (isset($_POST['btn_registrazione'])) {
         <li><a href="Carrello.php">Carrello</a></li>
     </ul>
 </nav>
+=======
+            <ul>
+              <li><a href="Login.php">Login</a></li>
+            </ul>
+          </nav>
+>>>>>>> Stashed changes
 
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

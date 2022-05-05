@@ -21,6 +21,7 @@ if (isset($_SESSION["ID_Cliente"])) {
 }
 ?>
 
+<<<<<<< Updated upstream
 <link rel="stylesheet" href="Stile.css">
 <nav class="header">
   <ul>
@@ -33,6 +34,22 @@ if (isset($_SESSION["ID_Cliente"])) {
 </nav>
 </header>
 
+=======
+<html>
+  <head>
+    <link rel="stylesheet" href="Stile.css">
+  </head>
+          <nav class="header">
+            <ul>
+              <li><a href="Catalogo.php">Catalogo</a></li>
+              <li><a href="Cerca.php">Cerca</a></li>
+              <li><a href="ScansioneCodice.php">Scansione Codice</a></li>
+              <li><a href="Carrello.php">Carrello</a></li>
+              <li><a href="Logout.php">Logout</a></li>
+            </ul>
+          </nav>
+      <body>
+>>>>>>> Stashed changes
 <body>
   <p>
     <label>Nome: </label>
@@ -45,5 +62,4 @@ if (isset($_SESSION["ID_Cliente"])) {
     <?php echo $codiceTessera; ?><br>
   </p>
 </body>
-
 </html>

@@ -16,7 +16,12 @@ if (isset($_POST['btn_login'])) {
     $ID_Cliente = $row2['ID_Utente'];
     if ($count > 0) {
         $_SESSION['ID_Cliente'] = $ID_Cliente;
+<<<<<<< Updated upstream
         header('Location: ScansioneCodici.php');
+=======
+        header('Location: ScansioneCodice.php');
+
+>>>>>>> Stashed changes
     } else {
         $err = "Username e/o password non valido/i";
         echo "<script>alert('$err')</script>";
@@ -27,6 +32,7 @@ if (isset($_POST['btn_login'])) {
 <html>
 <link rel="stylesheet" href="Stile.css">
 <nav class="header">
+<<<<<<< Updated upstream
     <ul>
         <li><a href="Catalogo.php">Catalogo</a></li>
         <li><a href="Cerca.php">Cerca</a></li>
@@ -36,6 +42,12 @@ if (isset($_POST['btn_login'])) {
     </ul>
 </nav>
 
+=======
+            <ul>
+              <li><a href="Registrazione.php">Registrazione</a></li>
+            </ul>
+          </nav>
+>>>>>>> Stashed changes
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="centerForm search_box">

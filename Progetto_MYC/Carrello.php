@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php session_start(); ?>
 <link rel="stylesheet" href="Stile.css">
 <nav class="header">
@@ -20,3 +21,24 @@
 
 <body>
 </body>
+=======
+<?php
+session_start();
+if(!isset($_SESSION['ID_Cliente']))
+header("location:Login.php");
+?>
+<html>
+<link rel="stylesheet" href="Stile.css">
+<nav class="header">
+  <ul>
+    <li><a href="ScansioneCodice.php">Catalogo</a></li>
+    <li><a href="Cerca.php">Cerca</a></li>
+    <li><a href="Tessera.php">Tessera</a></li>
+    <li><a href="ScansioneCodici.php">Scansiona codici</a></li>
+    <li><a href="Logout.php">Logout</a></li>
+  </ul>
+</nav>
+      <body>
+      </body>
+</html>
+>>>>>>> Stashed changes
