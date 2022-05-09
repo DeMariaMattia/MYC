@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                     $sql2="UPDATE prodotto SET Magazzino=(Magazzino-$Quantita) WHERE CodiceProdotto=$CodiceProdotto";
                     if($stmt2= mysqli_prepare($link,$sql2)){
                         if(mysqli_stmt_execute($stmt2)){
-                            header("location:ScansioneCodici.php");
+                            header("location:ScansioneCodice.php");
                         }
                         mysqli_stmt_close($stmt2);
                     }
@@ -54,11 +54,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   </head>
           <nav class="header">
             <ul>
-              <li><a href="Catalogo.php">Catalogo</a></li>
-              <li><a href="Cerca.php">Cerca</a></li>
-              <li><a href="Tessera.php">Tessera</a></li>
-              <li><a href="Carrello.php">Carrello</a></li>
-              <li><a href="Logout.php">Logout</a></li>
+            <li class="alignLI"><a href="Carrello.php">Carrello</a></li>
+            <li class="alignLI"><a  href="Catalogo.php">Catalogo</a></li>
+            <li class="alignLI"><a href="Cerca.php">Cerca</a></li>
+            <li class="alignLI"><a id="selected" href="ScansioneCodice.php">Scansiona codici</a></li>
+            <li class="alignLI"><a href="Tessera.php">Tessera</a></li>
+            <li class="alignLI"><a href="Logout.php">Logout</a></li>
             </ul>
           </nav>
       <body>

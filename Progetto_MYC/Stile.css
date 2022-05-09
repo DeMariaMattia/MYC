@@ -71,6 +71,12 @@ nav a:hover::before {
 	display: flex;
 	align-items:center;
 }
+.header .alignLI{
+margin-left: 130px;
+}
+.header .alignL_R{
+	margin-left: 1100px;
+	}
 .text{
     color:white;
     text-align: center;
@@ -186,4 +192,111 @@ position: absolute;
 
 #selected{
 	color: black;
+}
+
+.loginForm {
+	margin: auto;
+	width: 500px;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+
+.loginForm label {
+	color: white;
+}
+
+.loginForm button {
+	color: red;
+	border-radius: 12px;
+	width: 100px;
+	height: 30px;
+	font-weight: bold;
+}
+
+
+.loginForm .white-rounded-input-container {
+	width: 400px;
+	height: 60px;
+	background-color: white;
+	margin: 20px 0;
+	border-radius: 30px;
+}
+
+.loginForm .white-rounded-input {
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+	border-radius: 30px;
+	padding: 20px;
+
+	outline: none;
+	border: none;
+}
+
+.registerForm {
+	margin: auto;
+	width: 500px;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+
+.registerForm label {
+	color: white;
+}
+
+.registerForm button {
+	color: red;
+	border-radius: 12px;
+	width: 150px;
+	height: 30px;
+	font-weight: bold;
+}
+
+
+.registerForm .white-rounded-input-container {
+	width: 300px;
+	height: 40px;
+	background-color: white;
+	margin: 15px 0;
+	border-radius: 30px;
+}
+
+.registerForm .white-rounded-input {
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+	border-radius: 30px;
+	padding: 20px;
+
+	outline: none;
+	border: none;
+}
+.TableProva{
+	background-color: red;
+	align-items: center;
+	margin-left: 405px;
+}
+.TableProva .Text{
+	color: white;
+	font-weight: bold;
+	padding-right: 50px;
+	text-align: center;
+}
+.TableProva .Text2{
+	color: black;
+	font-weight: bold;
+	padding-right: 50px;
+	text-align: center;
+}
+.alignIMG{
+align-items: center;
+width: 400px;
 }

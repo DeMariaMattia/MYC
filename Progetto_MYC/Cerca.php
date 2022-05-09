@@ -1,61 +1,37 @@
-<?php session_start();?>
-<link rel="stylesheet" href="Stile.css">
-<nav class="header">
-<<<<<<< Updated upstream
-  <ul>
-    <li><a href="Catalogo.php">Catalogo</a></li>
-    <li><a id="selected" href="Cerca.php">Cerca</a></li>
-    <li><a href="Tessera.php">Tessera</a></li>
-    <li><a href="ScansioneCodici.php">Scansiona codici</a></li>
-    <li><a href="Carrello.php">Carrello</a></li>
-    <?php
-    if (isset($_SESSION["ID_Cliente"])) {
-      echo "<li><a href=Logout.php>Logout</a></li>";
-    } else {
-      echo "<li><a href=Login.php>Login</a></li>";
-      echo "<li><a href=Registrazione.php>Registrazione</a></li>";
-    }
-    ?>
-
-  </ul>
-</nav>
-
-<body>
-  <h2 class="text">Inserire codice prodotto da cercare</h2>
-  <div class="search_wrap search_wrap_3">
-    <div class="search_box">
-      <form action="elaboraCerca.php" method="post">
-        <input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
-        <input type="submit" id="BtnStringa" name="BtnStringa" class="rosso">
-      </form>
-    </div>
-  </div>
-</body>
-
-=======
-            <ul>
-              <li><a href="Catalogo.php">Catalogo</a></li>
-              <li><a href="ScansioneCodice.php">Scansiona codici</a></li>
-              <li><a href="Tessera.php">Tessera</a></li>
-              <li><a href="Carrello.php">Carrello</a></li>
-              <li><a href="Logout.php">Logout</a></li>
-            </ul>
-          </nav>
-      <body class="DettagliProdotto">
-            <h1>Dettagli del prodotto</h1>
-      </body>
-</html>
 <?php
 session_start();
 if(!isset($_SESSION['ID_Cliente']))
 header("location:Login.php");
 ?>
+<html>
+<link rel="stylesheet" href="Stile.css">
+<nav class="header">
+  <ul>
+    <li class="alignLI"><a href="Carrello.php">Carrello</a></li>
+    <li class="alignLI"><a href="Catalogo.php">Catalogo</a></li>
+    <li class="alignLI"><a id="selected" href="Cerca.php">Cerca</a></li>
+    <li class="alignLI"><a href="ScansioneCodice.php">Scansiona codici</a></li>
+    <li class="alignLI"><a href="Tessera.php">Tessera</a></li>
+    <li class="alignLI"><a href="Logout.php">Logout</a></li>
+  </ul>
+</nav>
+      <body>
+        <h2 class="text">Inserire codice prodotto da cercare</h2>
+        <div class="search_wrap search_wrap_3">
+			    <div class="search_box">
+            <form action="Cerca.php" method="post">
+				    <input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
+            <input type="submit" id="BtnStringa" name="BtnStringa" class="rosso">
+            </form>
+		      </div>
+          </div>
+      </body>
+</html>
 <?php
 require_once 'Config.php';
 $CodiceProdotto="";
 $CodiceProdotto_err="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-
     $input_Codice=trim($_POST["TxtStringa"]);
     if(empty($input_Codice)){
         $CodiceProdotto_err="Inserisci un codice di prodotto valido.";
@@ -74,26 +50,26 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                         $Categoria=$row['Categoria'];
                         $Reparto=$row['Reparto'];
                         $PrezzoUnitario=$row['PrezzoUnitario']; 
-                        echo "<table>";
+                        echo "<table class='TableProva'>";
                         echo "<thead>";
                             echo "<tr>";
-                                echo "<th>Codice Prodotto</th>";
-                                echo "<th>Nome Prodotto</th>";
-                                echo "<th>Categoria</th>";
-                                echo "<th>Reparto</th>";
-                                echo "<th>PrezzoUnitario</th>";
+                                echo "<th class='Text'>Codice Prodotto</th>";
+                                echo "<th class='Text'>Nome Prodotto</th>";
+                                echo "<th class='Text'>Categoria</th>";
+                                echo "<th class='Text'>Reparto</th>";
+                                echo "<th class='Text'>PrezzoUnitario</th>";
                             echo "</tr>";
                         echo "</thead>";
                         echo "<tr>";
-                        echo "<th>" .$row['CodiceProdotto']."</th>";
-                        echo "<td>" .$row['NomeProdotto']."</td>";
-                        echo "<td>" .$row['Categoria']."</td>";
-                        echo "<td>" .$row['Reparto']."</td>";
-                        echo "<td>" .$row['PrezzoUnitario']."</td>";
+                        echo "<th class='Text2'>" .$row['CodiceProdotto']."</th>";
+                        echo "<td class='Text2'>" .$row['NomeProdotto']."</td>";
+                        echo "<td class='Text2'>" .$row['Categoria']."</td>";
+                        echo "<td class='Text2'>" .$row['Reparto']."</td>";
+                        echo "<td class='Text2'>" .$row['PrezzoUnitario']."</td>";
                         echo "</tr>";
                     echo "</table>";
                     }else{
-                        header("location:ScansioneCodice.php");
+                        //header("location:ScansioneCodice.php");
                         exit();
                     }
                 }
@@ -108,27 +84,3 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     mysqli_stmt_close($stmt);
     mysqli_close($link);
 ?>
-<html>
-<link rel="stylesheet" href="Stile.css">
-<nav class="header">
-  <ul>
-    <li><a href="Catalogo.php">Catalogo</a></li>
-    <li><a href="ScansioneCodice.php">Scansiona Codice</a></li>
-    <li><a href="Tessera.php">Tessera</a></li>
-    <li><a href="Carrello.php">Carrello</a></li>
-    <li><a href="Logout.php">Logout</a></li>
-  </ul>
-</nav>
-      <body>
-        <h2 class="text">Inserire codice prodotto da cercare</h2>
-        <div class="search_wrap search_wrap_3">
-			    <div class="search_box">
-            <form action="Cerca.php" method="post">
-				    <input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
-            <input type="submit" id="BtnStringa" name="BtnStringa" class="rosso">
-            </form>
-		      </div>
-          </div>
-      </body>
->>>>>>> Stashed changes
-</html>

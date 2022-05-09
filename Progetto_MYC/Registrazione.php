@@ -26,8 +26,9 @@ if (isset($_POST['btn_registrazione'])) {
                 $resultID = mysqli_query($link, $sql_ID);
                 $row = mysqli_fetch_array($resultID);
                 $ID_Cliente = $row['ID_Utente'];
-                $sql_Tessera = "INSERT INTO tessera (ID_Utente,Punti) VALUES ($ID_Cliente, '0')";
+                $sql_Tessera = "INSERT INTO tessera (ID_Utente,Punti) VALUES ($ID_Cliente, '500')";
                 $result = mysqli_query($link, $sql_Tessera);
+                header('Location: Login.php');
             } else {
                 $err = mysqli_stmt_error($stmt);
                 echo "<script>alert('$err')</script>";
@@ -43,45 +44,44 @@ if (isset($_POST['btn_registrazione'])) {
 <html>
 <link rel="stylesheet" href="Stile.css">
 <nav class="header">
-<<<<<<< Updated upstream
-    <ul>
-        <li><a href="Catalogo.php">Catalogo</a></li>
-        <li><a href="Cerca.php">Cerca</a></li>
-        <li><a href="Tessera.php">Tessera</a></li>
-        <li><a href="ScansioneCodici.php">Scansiona codici</a></li>
-        <li><a href="Carrello.php">Carrello</a></li>
-    </ul>
-</nav>
-=======
             <ul>
-              <li><a href="Login.php">Login</a></li>
+              <li class="alignL_R"><a href="Login.php">Login</a></li>
             </ul>
           </nav>
->>>>>>> Stashed changes
 
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="centerForm">
+    <div class="registerForm">
 
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Inserire E-mail" name="email" required><br>
+            <div class="white-rounded-input-container">
+                <input class="white-rounded-input" type="text" placeholder="Inserire una mail " name="email" required><br>
+            </div>
 
             <label for="nome"><b>Nome</b></label>
-            <input type="text" placeholder="Inserire Nome" name="nome" required><br>
+            <div class="white-rounded-input-container">
+                <input class="white-rounded-input" type="text" placeholder="Inserire nome " name="nome" required><br>
+            </div>
 
             <label for="cognome"><b>Cognome</b></label>
-            <input type="text" placeholder="Inserire Cognome" name="cognome" required><br>
+            <div class="white-rounded-input-container">
+                <input class="white-rounded-input" type="text" placeholder="Inserire cognome " name="cognome" required><br>
+            </div>
 
             <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Inserire Username" name="username" required><br>
+            <div class="white-rounded-input-container">
+                <input class="white-rounded-input" type="text" placeholder="Inserire un username " name="username" required><br>
+            </div>
 
             <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Inserire Password" name="password" required><br>
-
-            <label for="password_conferma"><b>Conferma Password</b></label>
-            <input type="password" placeholder="Confermare Password" name="password_conferma" required><br>
-
-            <button type="submit" name="btn_registrazione">Registrazione</button>
+            <div class="white-rounded-input-container">
+                <input class="white-rounded-input" type="text" placeholder="Inserire una password " name="password" required><br>
+            </div>
+            <label for="password_conferma"><b>Conferma password</b></label>
+            <div class="white-rounded-input-container">
+                <input class="white-rounded-input" type="text" placeholder="Conferma password " name="password_conferma" required><br>
+            </div>
+            <button type="submit" name="btn_registrazione">REGISTRAZIONE</button>
         </div>
     </form>
 </body>
