@@ -50,6 +50,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 ?>
 <html>
   <head>
+      <title>Scansione Codice</title>
     <link rel="stylesheet" href="Stile.css">
   </head>
           <nav class="header">

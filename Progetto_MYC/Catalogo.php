@@ -1,6 +1,10 @@
 <?php session_start(); ?>
 <html>
-<link rel="stylesheet" href="Stile.css">
+
+<head>
+  <title>Catalogo</title>
+  <link rel="stylesheet" href="Stile.css">
+</head>
 <nav class="header">
   <ul>
     <li class="alignLI"><a href="Carrello.php">Carrello</a></li>

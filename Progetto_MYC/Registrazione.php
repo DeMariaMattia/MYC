@@ -42,16 +42,20 @@ if (isset($_POST['btn_registrazione'])) {
 ?>
 
 <html>
-<link rel="stylesheet" href="Stile.css">
+
+<head>
+    <title>Registrazione</title>
+    <link rel="stylesheet" href="Stile.css">
+</head>
 <nav class="header">
-            <ul>
-              <li class="alignL_R"><a href="Login.php">Login</a></li>
-            </ul>
-          </nav>
+    <ul>
+        <li class="alignL_R"><a href="Login.php">Login</a></li>
+    </ul>
+</nav>
 
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-    <div class="registerForm">
+        <div class="registerForm">
 
             <label for="email"><b>Email</b></label>
             <div class="white-rounded-input-container">

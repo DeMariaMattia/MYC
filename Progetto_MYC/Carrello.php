@@ -1,5 +1,10 @@
 <?php session_start(); ?>
-<link rel="stylesheet" href="Stile.css">
+<html>
+
+<head>
+  <title>Carrello</title>
+  <link rel="stylesheet" href="Stile.css">
+</head>
 <nav class="header">
   <ul>
     <li class="alignLI"><a id="selected" href="Carrello.php">Carrello</a></li>
@@ -10,5 +15,8 @@
     <li class="alignLI"><a href="Logout.php">Logout</a></li>
   </ul>
 </nav>
+
 <body>
 </body>
+
+</html>

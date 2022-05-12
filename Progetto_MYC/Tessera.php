@@ -21,34 +21,41 @@ if (isset($_SESSION["ID_Cliente"])) {
   header("Location:Login.php");
 }
 ?>
-
 <html>
-  <head>
-    <link rel="stylesheet" href="Stile.css">
-  </head>
-          <nav class="header">
-            <ul>
-            <li class="alignLI"><a href="Carrello.php">Carrello</a></li>
-            <li class="alignLI"><a href="Catalogo.php">Catalogo</a></li>
-            <li class="alignLI"><a href="Cerca.php">Cerca</a></li>
-            <li class="alignLI"><a href="ScansioneCodice.php">Scansiona codici</a></li>
-            <li class="alignLI"><a id="selected" href="Tessera.php">Tessera</a></li>
-            <li class="alignLI"><a href="Logout.php">Logout</a></li>
-            </ul>
-          </nav>
-      <body>
+
+<head>
+  <title>Tessera</title>
+  <link rel="stylesheet" href="Stile.css">
+</head>
+<nav class="header">
+  <ul>
+    <li class="alignLI"><a href="Carrello.php">Carrello</a></li>
+    <li class="alignLI"><a href="Catalogo.php">Catalogo</a></li>
+    <li class="alignLI"><a href="Cerca.php">Cerca</a></li>
+    <li class="alignLI"><a href="ScansioneCodice.php">Scansiona codici</a></li>
+    <li class="alignLI"><a id="selected" href="Tessera.php">Tessera</a></li>
+    <li class="alignLI"><a href="Logout.php">Logout</a></li>
+  </ul>
+</nav>
+
 <body>
-  <p>
-    <label>Nome: </label>
-    <?php echo $nome; ?><br>
-    <label>Cognome: </label>
-    <?php echo $cognome; ?><br>
-    <label>Punti: </label>
-    <?php echo $punti; ?><br>
-    <label>Codice tessera: </label>
-    <?php echo $codiceTessera; ?><br>
-    <label>Saldo tessera: </label>
-    <?php echo $saldo; ?><br>
-  </p>
-</body>
+
+  <body>
+    <p>
+      <label>Nome: </label>
+      <?php echo $nome; ?><br>
+      <label>Cognome: </label>
+      <?php echo $cognome; ?><br>
+      <label>Punti: </label>
+      <?php echo $punti; ?><br>
+      <label>Codice tessera: </label>
+      <?php echo $codiceTessera; ?><br>
+      <label>Saldo tessera: </label>
+      <?php echo $saldo; ?><br>
+    <form action="ricaricaSaldo.php" method="POST">
+      <input type="submit" value="Ricarica Saldo">
+    </form>
+    </p>
+  </body>
+
 </html>
