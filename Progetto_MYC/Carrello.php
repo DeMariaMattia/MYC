@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 session_start();
 if(!isset($_SESSION['ID_Cliente']))
@@ -6,15 +5,6 @@ header("location:Login.php");
 ?>
 <link rel="stylesheet" href="Stile2.css">
 <link rel="stylesheet" href="Stile.css">
-=======
-<?php session_start(); ?>
-<html>
-
-<head>
-  <title>Carrello</title>
-  <link rel="stylesheet" href="Stile.css">
-</head>
->>>>>>> b172e4ea956da49a82af1da2d0581e38ead5a7ee
 <nav class="header">
   <ul>
     <li class="alignLI"><a id="selected" href="Carrello.php">Carrello</a></li>
@@ -25,7 +15,6 @@ header("location:Login.php");
     <li class="alignLI"><a href="Logout.php">Logout</a></li>
   </ul>
 </nav>
-
 <body>
   <br>
   <br>
@@ -74,8 +63,4 @@ header("location:Login.php");
   </div>
 </form>
 </body>
-<<<<<<< HEAD
-=======
-
->>>>>>> b172e4ea956da49a82af1da2d0581e38ead5a7ee
 </html>

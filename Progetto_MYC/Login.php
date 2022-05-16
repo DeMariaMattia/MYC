@@ -23,12 +23,9 @@ if (isset($_POST['btn_login'])) {
     }
 }
 ?>
-<html>
 
-<head>
-    <link rel="stylesheet" href="Stile.css">
-    <title>Login</title>
-</head>
+<html>
+<link rel="stylesheet" href="Stile.css">
 <nav class="header">
     <ul>
         <li class="alignL_R"><a href="Registrazione.php">Registrazione</a></li>
@@ -38,14 +35,14 @@ if (isset($_POST['btn_login'])) {
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="loginForm">
-            <img class="alignIMG" src="Logo.png">
-            <label for="username">Username</label>
+        <img class="alignIMG" src="Logo.png">
+        <label for="username">Username</label>
 
             <div class="white-rounded-input-container">
                 <input class="white-rounded-input" type="text" placeholder="Inserire Username" name="username" required><br>
             </div>
-
-            <label for="password">Password</label>
+            
+        <label for="password">Password</label>
 
             <div class="white-rounded-input-container">
                 <input class="white-rounded-input" type="password" placeholder="Inserire Password" name="password" required><br>

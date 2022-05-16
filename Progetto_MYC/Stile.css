@@ -1,5 +1,4 @@
 @import url('https://css.gg/search.css');
-
 body {
 	margin: 0;
 	background: #222;
@@ -14,94 +13,90 @@ body {
 }
 
 header {
-	background: red;
+  background:red;
 }
 
 header::after {
-	content: '';
-	display: table;
-	clear: both;
+  content: '';
+  display: table;
+  clear: both;
 }
 
 .logo {
-	float: left;
-	padding: 10px 0;
+  float: left;
+  padding: 10px 0;
 }
 
 
 nav ul {
-	list-style: none;
+  list-style: none;
 }
 
 nav li {
-	display: inline-block;
-	margin-left: 70px;
-	padding: 10px;
-	position: relative;
+  display: inline-block;
+  margin-left: 70px;
+  padding: 10px;
+  position: relative;
 }
 
 nav a {
-	color: white;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 14px;
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 nav a:hover {
-	color: #000;
+  color: #000;
 }
-
 nav a::before {
-	content: '';
-	display: block;
-	height: 5px;
-	background-color: #444;
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
 
-	position: absolute;
-	top: 0;
-	width: 0%;
+  position: absolute;
+  top: 0;
+  width: 0%;
 
-	transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms;
 }
 
 nav a:hover::before {
-	width: 100%;
+  width: 100%;
 }
 
-.header {
+.header{
 	background-color: red;
 	display: flex;
-	align-items: center;
+	align-items:center;
 }
-
-.header .alignLI {
-	margin-left: 130px;
+.header .alignLI{
+margin-left: 130px;
 }
-
-.header .alignL_R {
+.header .alignL_R{
 	margin-left: 1100px;
-}
-
-.text {
-	color: white;
-	text-align: center;
-	margin-top: 15%;
+	}
+.text{
+    color:white;
+    text-align: center;
+    margin-top: 15%;
 	font-family: "Verdana, Geneva, Tahoma, sans-serif";
 }
 
-.search_wrap {
+.search_wrap{
 	width: 500px;
 	margin: 38px auto;
 }
 
-.search_wrap .search_box {
+.search_wrap .search_box{
 	position: relative;
 	width: 500px;
 	height: 60px;
 
 }
 
-.search_wrap .search_box .input {
+.search_wrap .search_box .input{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -114,7 +109,7 @@ nav a:hover::before {
 	border: none;
 }
 
-.search_wrap .search_box .rosso {
+.search_wrap .search_box .rosso{
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -133,55 +128,52 @@ nav a:hover::before {
 
 }
 
-.search_wrap .search_box .btn:hover {
-	background: grey;
+.search_wrap .search_box .btn:hover{
+	background:grey;	
+}
+.search_wrap .search_box .rosso:hover{
+	filter: brightness(.8);	
 }
 
-.search_wrap .search_box .rosso:hover {
-	filter: brightness(.8);
-}
-
-.search_wrap .search_box .btn.btn_common .fas {
+.search_wrap .search_box .btn.btn_common .fas{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%,-50%);
 	color: #fff;
 	font-size: 20px;
 }
 
 
-.search_wrap.search_wrap_3 .search_box .input {
+.search_wrap.search_wrap_3 .search_box .input{
 	padding-right: 80px;
 }
 
 
-.search_wrap.search_wrap_3 .search_box .input {
-	border-radius: 50px;
+.search_wrap.search_wrap_3 .search_box .input{
+    border-radius: 50px;
 }
 
-.search_wrap.search_wrap_3 .search_box .btn {
+.search_wrap.search_wrap_3 .search_box .btn{
 	right: 0px;
 	border-radius: 50%;
 }
 
-.SpostaBar {
+.SpostaBar{
 	margin-top: 0%;
 }
-
-.ButtonCerca {
+.ButtonCerca{
 	background-color: red;
 	width: 50px;
 	height: 50px;
 	border-radius: 45%;
 	position: absolute;
 }
-
-.gg-search {
-	position: absolute;
+.gg-search{
+position: absolute;
 }
 
-.centerForm {
+.centerForm{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -190,16 +182,15 @@ nav a:hover::before {
 	width: 100px;
 	height: 100px;
 }
-
-.centerForm .label {
-	color: red;
-	text-align: center;
-	margin-top: 15%;
+.centerForm .label{
+	color:red;
+    text-align: center;
+    margin-top: 15%;
 	font-family: 'Work Sans', sans-serif;
 	font-size: 30px;
 }
 
-#selected {
+#selected{
 	color: black;
 }
 
@@ -289,27 +280,23 @@ nav a:hover::before {
 	outline: none;
 	border: none;
 }
-
-.TableProva {
+.TableProva{
 	background-color: red;
 	align-items: center;
 	margin-left: 405px;
 }
-
-.TableProva .Text {
+.TableProva .Text{
 	color: white;
 	font-weight: bold;
 	padding-right: 50px;
 	text-align: center;
 }
-
-.TableProva .Text2 {
+.TableProva .Text2{
 	color: black;
 	font-weight: bold;
 	padding-right: 50px;
 	text-align: center;
 }
-<<<<<<< HEAD
 .alignIMG{
 align-items: center;
 width: 400px;
@@ -379,14 +366,4 @@ width: 400px;
 	font-weight: bold;
 	padding-right: 50px;
 	margin-left: 43%;
-=======
-
-.alignIMG {
-	align-items: center;
-	width: 400px;
-}
-
-p {
-	color: white;
->>>>>>> b172e4ea956da49a82af1da2d0581e38ead5a7ee
 }
