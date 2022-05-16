@@ -17,10 +17,11 @@ header("location:Login.php");
 </nav>
       <body>
         <h2 class="text">Inserire codice prodotto da cercare</h2>
+        <a class ="Collegamento" href="CercaProdottoPerNome.php">Cerca il prodotto per nome</a>
         <div class="search_wrap search_wrap_3">
 			    <div class="search_box">
             <form action="Cerca.php" method="post">
-				    <input type="text" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
+				    <input type="number" id="TxtStringa" name="TxtStringa" class="input" placeholder="Codice prodotto...">
             <input type="submit" id="BtnStringa" name="BtnStringa" class="rosso">
             </form>
 		      </div>
@@ -39,12 +40,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $CodiceProdotto=$input_Codice;
     }
 }
-    if((empty($CodiceProdotto_err))){
+    if((empty($CodiceProdotto_err))&&$CodiceProdotto!=0){
         $sql="SELECT * FROM prodotto WHERE (CodiceProdotto='$CodiceProdotto')";
             if($stmt= mysqli_prepare($link,$sql)){
                 if(mysqli_stmt_execute($stmt)){
                     $result = mysqli_stmt_get_result($stmt);
-                    if(mysqli_num_rows($result)==1){
+                    if(mysqli_num_rows($result)==1 ||$CodiceProdotto==0){
                         $row=mysqli_fetch_array($result, MYSQLI_ASSOC);
                         $NomeProdotto=$row['NomeProdotto'];
                         $Categoria=$row['Categoria'];
@@ -69,18 +70,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                         echo "</tr>";
                     echo "</table>";
                     }else{
-                        //header("location:ScansioneCodice.php");
-                        exit();
+                        echo "<p class='Avvisi'>Prodotto non presente nel database</p>";
                     }
                 }
             }
             if(mysqli_stmt_execute($stmt)){
                 //header("location:Visualizza.php");
-                exit();
             }else{
                 echo "OPS, qualcosa è andato storto... Riprovare più tardi";
             }
+    }else{
+        //echo "Codice prodotto non presente nel database";
     }
-    mysqli_stmt_close($stmt);
+    //mysqli_stmt_close($stmt);
     mysqli_close($link);
 ?>

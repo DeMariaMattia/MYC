@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php
+session_start();
+if(!isset($_SESSION['ID_Cliente']))
+header("location:Login.php");
+?>
+<link rel="stylesheet" href="Stile2.css">
 <link rel="stylesheet" href="Stile.css">
 <nav class="header">
   <ul>
@@ -11,4 +16,51 @@
   </ul>
 </nav>
 <body>
+  <br>
+  <br>
+  <center><label class="AlignLabel">IL TUO CARRELLO:</label></center>
+  <?php
+  require_once 'Config.php';
+  $ID_Cliente=$_SESSION['ID_Cliente'];
+    //devo mettere il for per i prodotti
+    $sql= "SELECT NomeProdotto,PrezzoUnitario,Quantita,carrello.CodiceProdotto FROM prodotto,carrello WHERE ((prodotto.CodiceProdotto = carrello.CodiceProdotto) AND ID_Utente=$ID_Cliente)";
+    if ($result=mysqli_query($link,$sql)){                    
+      if(mysqli_num_rows($result)>0){
+              echo "<table class='TableProvaCarrello'>";
+                echo "<thead>";
+                    echo "<tr>";
+                    echo "<th class='Text'>Codice prodotto</th>";
+                        echo "<th class='Text'>Prodotto</th>";
+                        echo "<th class='Text'>Quantità</th>";
+                        echo "<th class='Text'>Prezzo</th>";
+                        echo "<th class='Text'>Elimina</th>";
+                    echo "</tr>";
+                echo "</thead>";
+                while($row=mysqli_fetch_array($result)){
+                  echo "<tr>";
+                      echo "<th class='Text2'>" .$row['CodiceProdotto']."</th>";
+                      echo "<td class='Text2'>" .$row["NomeProdotto"]. "</td>";
+                      echo "<td class='Text2'>" .$row["Quantita"]."</td>";
+                      echo "<td class='Text2'>" .$row["PrezzoUnitario"]. "</td>";
+                      echo "<td class='Text2'><a href='EliminaProdotto.php?&CodiceProdotto=".$row['CodiceProdotto']."'><img src='bottone.svg'></a></td>";
+                  echo "</tr>";
+              }
+              echo "</table>";
+              mysqli_free_result($result);
+          }else{
+            echo "<br><br><p class='Avvisi'>IL TUO CARRELLO AL MOMENTO E' VUOTO</p>";
+          }
+        }else{
+          echo "ERROR: non abile ad eseguire".$sql;
+        }
+        mysqli_close($link);
+?>
+<br>
+<br>
+<form action="EliminaProdottiCarrello.php" method="POST">
+  <div class="Acquista">
+      <button type="submit" name="btn_Acqista">Acquista</button>
+  </div>
+</form>
 </body>
+</html>

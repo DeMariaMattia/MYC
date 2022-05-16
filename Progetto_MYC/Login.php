@@ -45,7 +45,7 @@ if (isset($_POST['btn_login'])) {
         <label for="password">Password</label>
 
             <div class="white-rounded-input-container">
-                <input class="white-rounded-input" type="text" placeholder="Inserire Password" name="password" required><br>
+                <input class="white-rounded-input" type="password" placeholder="Inserire Password" name="password" required><br>
             </div>
 
             <button type="submit" name="btn_login">LOGIN</button>

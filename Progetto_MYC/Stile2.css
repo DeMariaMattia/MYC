@@ -1,0 +1,379 @@
+body {
+	margin: 0;
+	background: #222;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+}
+
+.container {
+	width: 80%;
+	height: fit-content;
+	margin: 0;
+}
+
+header {
+  background:red;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding: 10px;
+  position: relative;
+}
+
+nav a {
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #222;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.header{
+	background-color: red;
+	display: flex;
+	align-items:center;
+}
+.header .alignLI{
+margin-left: 130px;
+}
+.header .alignL_R{
+	margin-left: 1100px;
+	}
+.text{
+    color:white;
+    text-align: center;
+    margin-top: 15%;
+	font-family: "Verdana, Geneva, Tahoma, sans-serif";
+}
+
+.search_wrap{
+	width: 500px;
+	margin: 38px auto;
+}
+
+.search_wrap .search_box{
+	position: relative;
+	width: 500px;
+	height: 60px;
+
+}
+
+.search_wrap .search_box .input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 25px;
+	border-radius: 3px;
+	font-size: 18px;
+	outline: none;
+	border: none;
+}
+
+.search_wrap .search_box .rosso{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 8px;
+	width: 50px;
+	height: 50px;
+	background: red;
+	cursor: pointer;
+	outline: none;
+	border: none;
+
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.search_wrap .search_box .btn:hover{
+	background:grey;	
+}
+.search_wrap .search_box .rosso:hover{
+	filter: brightness(.8);	
+}
+
+.search_wrap .search_box .btn.btn_common .fas{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 20px;
+}
+
+
+.search_wrap.search_wrap_3 .search_box .input{
+	padding-right: 80px;
+}
+
+
+.search_wrap.search_wrap_3 .search_box .input{
+    border-radius: 50px;
+}
+
+.search_wrap.search_wrap_3 .search_box .btn{
+	right: 0px;
+	border-radius: 50%;
+}
+
+.SpostaBar{
+	margin-top: 0%;
+}
+table {
+	font-family: arial, sans-serif;
+	border-style: solid;
+	width: 100%;
+	background-color: white;
+  }
+  
+  td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+	background-color: white;
+  }
+/* From cssbuttons.io by @hannahyockel */
+button {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	border: 0px solid transparent;
+	background-color: rgba(19, 19, 20, 0.08);
+	transition: all 0.2s linear;
+   }
+   
+   button:hover {
+	box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+	 8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+	 17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+	 36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+	 99px 72px 143px rgba(0, 0, 0, 0.08);
+   }
+   
+   .tooltip {
+	position: relative;
+	display: inline-block;
+   }
+   
+   .tooltip .tooltiptext {
+	visibility: hidden;
+	width: 4em;
+	background-color: rgba(0, 0, 0, 0.253);
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	top: 25%;
+	left: 110%;
+   }
+   
+   .tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 100%;
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+   }
+   
+   .tooltip:hover .tooltiptext {
+	visibility: visible;
+   }
+
+
+   
+   .dropbtn {  
+	background-color: red;
+	color: white;
+	padding: 16px;
+	width: 260px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+	background-color: red;
+  }
+  
+  #myInput {
+	box-sizing: border-box;
+	background-image: url('searchicon.png');
+	background-position: 14px 12px;
+	background-repeat: no-repeat;
+	font-size: 16px;
+	padding: 14px 20px 12px 45px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+  }
+  
+  #myInput:focus {outline: 3px solid #ddd;}
+  
+  .dropdown {
+	  	padding-left: 40px;
+		position: relative;
+		display: inline-block;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #222;
+	min-width: 230px;
+	overflow: auto;
+	z-index: 1;
+  }
+  
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  
+  .show {display: block;}
+
+  .sidenav {
+  
+	height: 500px;
+	width: 400px;
+	background-color: #222;
+	overflow-x: hidden;
+	padding-top: 10px;
+
+	border-radius: 0;
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+	
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+	border: none;
+	background: none;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	outline: none;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+	color: #f1f1f1;
+  }
+  
+  /* Main content */
+  .main {
+	margin-left: 200px; /* Same as the width of the sidenav */
+	font-size: 20px; /* Increased text to enable scrolling */
+	padding: 0px 10px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+	background-color: red;
+	color: white;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+	display: none;
+	background-color: #262626;
+	padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+	float: right;
+	padding-right: 8px;
+  }
+  
+  /* Some media queries for responsiveness */
+  @media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
+
+
+  .test {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: flex-start;
+	  background-color:#222;
+	  height: 100%;
+  }
+
+  .test .sidenav {
+	  flex-grow: 1;
+	  height: 100%;
+	  background-color:#222;
+
+  }
+.AlignLabel{
+    margin-top: 50px;
+    color: white;
+    font-size: 30px;
+}
+.AlignImage{
+	width: 40%;
+	height: 60%;
+}
+.AlignImage2{
+	width: 60%;
+	height: 60%;
+}

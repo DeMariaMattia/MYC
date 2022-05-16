@@ -26,6 +26,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $Quantita=$input_Qta;
     }
 }
+$Presente=0;
+$ID_Cliente=$_SESSION['ID_Cliente'];
+$sqlVerifica="SELECT DISTINCT CodiceProdotto FROM carrello";
+if($result=mysqli_query($link,$sqlVerifica)){
+    if(mysqli_num_rows($result)>0){
+        while($row=mysqli_fetch_array($result)){
+            $Test=$row["CodiceProdotto"];
+            if($Test==$CodiceProdotto){
+                $Presente=1;
+            }
+        }
+    }
+}
+if($Presente!=1){
     if((empty($CodiceProdotto_err))&&(empty($Quantita_err))){
         $ID_Cliente=$_SESSION['ID_Cliente'];
         $sql="INSERT INTO carrello (ID_Utente,CodiceProdotto,Quantita) VALUES ($ID_Cliente, $CodiceProdotto, $Quantita)";
@@ -39,12 +53,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                         mysqli_stmt_close($stmt2);
                     }
                     }else{
-                        echo "OPS, qualcosa è andato storto... Riprovare più tardi";
+                        echo "<p class='Avvisi'>OPS, qualcosa è andato storto... Riprovare più tardi, verificare se il prodotto inserito è corretto</p>";
+                        echo "<a href='ScansioneCodice.php' class='Avvisi'>Scansiona un altro prodotto</a>";
                         exit();
                     }
                     mysqli_stmt_close($stmt);
                 }
             }
+        }else{
+            $sqlAggiungi="UPDATE carrello SET Quantita=(Quantita+$Quantita) WHERE CodiceProdotto=$CodiceProdotto";
+                    if($stmtAggiungi= mysqli_prepare($link,$sqlAggiungi)){
+                        if(mysqli_stmt_execute($stmtAggiungi)){
+                            header("location:ScansioneCodice.php");
+                        }
+                        mysqli_stmt_close($stmtAggiungi);
+                    }else{
+                        echo "<p class='Avvisi'>OPS, qualcosa è andato storto... Riprovare più tardi, verificare se il prodotto inserito è corretto</p>";
+                        echo "<a href='ScansioneCodice.php' class='Avvisi'>Scansiona un altro prodotto</a>";
+                        exit();
+                    }
+                    mysqli_stmt_close($stmt);
+        }
     mysqli_close($link);
     
 ?>

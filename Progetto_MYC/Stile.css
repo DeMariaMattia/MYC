@@ -215,6 +215,7 @@ position: absolute;
 	width: 100px;
 	height: 30px;
 	font-weight: bold;
+	background-color: white;
 }
 
 
@@ -299,4 +300,70 @@ position: absolute;
 .alignIMG{
 align-items: center;
 width: 400px;
+}
+.TableProvaCarrello{
+	background-color: red;
+	align-items: center;
+	margin-top: 50px;
+}
+.TableProvaCarrello .Text{
+	color: white;
+	font-weight: bold;
+	padding-right: 50px;
+	text-align: center;
+}
+.TableProvaCarrello .Text2{
+	color: black;
+	font-weight: bold;
+	padding-right: 50px;
+	text-align: center;
+}
+.CarrelloForm{
+	margin: auto;
+	width: 500px;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+.RicaricaForm{
+	margin: auto;
+	width: 500px;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+.RicaricaForm button{
+	color: red;
+	border-radius: 12px;
+	width: 110px;
+	height: 40px;
+	font-weight: bold;
+	background-color: white;
+}
+.Acquista button {
+	color: red;
+	border-radius: 12px;
+	width: 100px;
+	height: 30px;
+	font-weight: bold;
+	background-color: white;
+	margin-left: 45%;
+}
+.Avvisi{
+	color: white;
+	font-weight: bold;
+	padding-right: 50px;
+	text-align: center;
+}
+.Collegamento{
+	color: white;
+	font-weight: bold;
+	padding-right: 50px;
+	margin-left: 43%;
 }
