@@ -79,6 +79,7 @@ if($Presente!=1){
 ?>
 <html>
   <head>
+      <title>Scansione Codice</title>
     <link rel="stylesheet" href="Stile.css">
   </head>
           <nav class="header">

@@ -26,7 +26,10 @@ if (isset($_SESSION["ID_Cliente"])) {
 <head>
   <title>Tessera</title>
   <link rel="stylesheet" href="Stile.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="StileTessera.css">
+=======
+>>>>>>> b172e4ea956da49a82af1da2d0581e38ead5a7ee
 </head>
 <nav class="header">
   <ul>
@@ -38,6 +41,7 @@ if (isset($_SESSION["ID_Cliente"])) {
     <li class="alignLI"><a href="Logout.php">Logout</a></li>
   </ul>
 </nav>
+<<<<<<< HEAD
   <body>
   <form action="ricaricaSaldo.php" method="POST">
     <div class="RicaricaForm">
@@ -61,3 +65,27 @@ if (isset($_SESSION["ID_Cliente"])) {
     </form>
   </body>
 </html>
+=======
+
+<body>
+
+  <body>
+    <p>
+      <label>Nome: </label>
+      <?php echo $nome; ?><br>
+      <label>Cognome: </label>
+      <?php echo $cognome; ?><br>
+      <label>Punti: </label>
+      <?php echo $punti; ?><br>
+      <label>Codice tessera: </label>
+      <?php echo $codiceTessera; ?><br>
+      <label>Saldo tessera: </label>
+      <?php echo $saldo; ?><br>
+    <form action="ricaricaSaldo.php" method="POST">
+      <input type="submit" value="Ricarica Saldo">
+    </form>
+    </p>
+  </body>
+
+</html>
+>>>>>>> b172e4ea956da49a82af1da2d0581e38ead5a7ee
