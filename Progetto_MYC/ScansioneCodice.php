@@ -7,6 +7,7 @@ header("location:Login.php");
 require_once 'Config.php';
 $CodiceProdotto="";
 $Quantita=0;
+$Magazzino=0;
 $CodiceProdotto_err=$Quantita_err="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
@@ -28,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 $Presente=0;
 $ID_Cliente=$_SESSION['ID_Cliente'];
-$sqlVerifica="SELECT DISTINCT CodiceProdotto FROM carrello";
+$sqlVerifica="SELECT DISTINCT CodiceProdotto FROM carrello WHERE ID_Utente=$ID_Cliente";
 if($result=mysqli_query($link,$sqlVerifica)){
     if(mysqli_num_rows($result)>0){
         while($row=mysqli_fetch_array($result)){
@@ -42,9 +43,20 @@ if($result=mysqli_query($link,$sqlVerifica)){
 if($Presente!=1){
     if((empty($CodiceProdotto_err))&&(empty($Quantita_err))){
         $ID_Cliente=$_SESSION['ID_Cliente'];
-        $sql="INSERT INTO carrello (ID_Utente,CodiceProdotto,Quantita) VALUES ($ID_Cliente, $CodiceProdotto, $Quantita)";
-            if($stmt= mysqli_prepare($link,$sql)){
-                if(mysqli_stmt_execute($stmt)){
+                //Controllo magazzino
+                $sqlMagazzino="SELECT Magazzino FROM prodotto WHERE CodiceProdotto=$CodiceProdotto";
+                if($result=mysqli_query($link,$sqlMagazzino)){
+                    if(mysqli_num_rows($result)>0){
+                        while($row=mysqli_fetch_array($result)){
+                            $Magazzino=$row["Magazzino"];
+                        }
+                    }
+                }
+                if(($Magazzino-$Quantita)>=0){
+                    $sql="INSERT INTO carrello (ID_Utente,CodiceProdotto,Quantita) VALUES ($ID_Cliente, $CodiceProdotto, $Quantita)";
+                    if($stmt= mysqli_prepare($link,$sql)){
+                        if(mysqli_stmt_execute($stmt)){
+                            if(($Magazzino-$Quantita)>=0){
                     $sql2="UPDATE prodotto SET Magazzino=(Magazzino-$Quantita) WHERE CodiceProdotto=$CodiceProdotto";
                     if($stmt2= mysqli_prepare($link,$sql2)){
                         if(mysqli_stmt_execute($stmt2)){
@@ -53,27 +65,46 @@ if($Presente!=1){
                         mysqli_stmt_close($stmt2);
                     }
                     }else{
-                        echo "<p class='Avvisi'>OPS, qualcosa è andato storto... Riprovare più tardi, verificare se il prodotto inserito è corretto</p>";
+                        echo "<p class='Avvisi'>Quantità eccessiva per le scorte presenti in magazzino</p>";
                         echo "<a href='ScansioneCodice.php' class='Avvisi'>Scansiona un altro prodotto</a>";
                         exit();
                     }
-                    mysqli_stmt_close($stmt);
-                }
-            }
-        }else{
-            $sqlAggiungi="UPDATE carrello SET Quantita=(Quantita+$Quantita) WHERE CodiceProdotto=$CodiceProdotto";
-                    if($stmtAggiungi= mysqli_prepare($link,$sqlAggiungi)){
-                        if(mysqli_stmt_execute($stmtAggiungi)){
-                            header("location:ScansioneCodice.php");
-                        }
-                        mysqli_stmt_close($stmtAggiungi);
                     }else{
                         echo "<p class='Avvisi'>OPS, qualcosa è andato storto... Riprovare più tardi, verificare se il prodotto inserito è corretto</p>";
                         echo "<a href='ScansioneCodice.php' class='Avvisi'>Scansiona un altro prodotto</a>";
                         exit();
                     }
                     mysqli_stmt_close($stmt);
+                }
+                }
         }
+}else{
+            $ID_Cliente=$_SESSION['ID_Cliente'];
+            $sqlMagazzino="SELECT Magazzino FROM prodotto WHERE CodiceProdotto=$CodiceProdotto";
+            if($result=mysqli_query($link,$sqlMagazzino)){
+                if(mysqli_num_rows($result)>0){
+                    while($row=mysqli_fetch_array($result)){
+                        $Magazzino=$row["Magazzino"];
+                    }
+                }
+            }    
+            if(($Magazzino-$Quantita)>=0){
+            $sqlAggiungi="UPDATE carrello SET Quantita=(Quantita+$Quantita) WHERE ((CodiceProdotto=$CodiceProdotto) AND (ID_Utente=$ID_Cliente))";
+                    if($stmtAggiungi= mysqli_prepare($link,$sqlAggiungi)){
+        if(mysqli_stmt_execute($stmtAggiungi)){
+                header("location:ScansioneCodice.php");
+            }
+        mysqli_stmt_close($stmtAggiungi);
+        }else{
+            echo "<p class='Avvisi'>OPS, qualcosa è andato storto... Riprovare più tardi, verificare se il prodotto inserito è corretto</p>";
+            echo "<a href='ScansioneCodice.php' class='Avvisi'>Scansiona un altro prodotto</a>";
+            exit();
+        }
+    }else{
+        echo "<p class='Avvisi'>Quantità eccessiva per le scorte presenti in magazzino</p>";
+        echo "<p class='Avvisi'><a href='ScansioneCodice.php' class='Avvisi'>Scansiona un altro prodotto</a></p>";
+    }
+}
     mysqli_close($link);
     
 ?>

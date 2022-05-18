@@ -13,7 +13,6 @@ require_once 'Config.php';
         $row = mysqli_fetch_array($resultControllo);
         $count = $row['ContaProdotti'];
 if($count>0){
-    echo("<p class='Avvisi'>Prodotti presenti</p>");
         $sql="SELECT Quantita,PrezzoUnitario FROM prodotto,carrello WHERE ((1=1) AND (carrello.CodiceProdotto=prodotto.CodiceProdotto) AND carrello.Id_Utente=$Id_Utente)";
         if($stmt= mysqli_prepare($link,$sql)){
             if(mysqli_stmt_execute($stmt)){

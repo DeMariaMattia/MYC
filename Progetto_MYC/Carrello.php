@@ -23,7 +23,7 @@ header("location:Login.php");
   require_once 'Config.php';
   $ID_Cliente=$_SESSION['ID_Cliente'];
     //devo mettere il for per i prodotti
-    $sql= "SELECT NomeProdotto,PrezzoUnitario,Quantita,carrello.CodiceProdotto FROM prodotto,carrello WHERE ((prodotto.CodiceProdotto = carrello.CodiceProdotto) AND ID_Utente=$ID_Cliente)";
+    $sql= "SELECT NomeProdotto,PrezzoUnitario,Quantita,carrello.CodiceProdotto FROM prodotto,carrello WHERE (prodotto.CodiceProdotto = carrello.CodiceProdotto AND ID_Utente=$ID_Cliente)";
     if ($result=mysqli_query($link,$sql)){                    
       if(mysqli_num_rows($result)>0){
               echo "<table class='TableProvaCarrello'>";

@@ -22,7 +22,7 @@ header("location:Login.php");
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <div class="loginForm">
     <div class="white-rounded-input-container">
-        <input class="white-rounded-input" type="number" placeholder="0-999" name="ricarica" required><br>
+        <input class="white-rounded-input" type="number" placeholder="1-999" name="ricarica" min="1" max="999" required><br>
     </div>
         <button type="submit">Ricarica</button>
     </div>
